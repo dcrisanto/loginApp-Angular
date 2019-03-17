@@ -9,4 +9,5 @@ export const environment = {
     storageBucket: "login-e3b98.appspot.com",
     messagingSenderId: "857338189328"
   }
+// tslint:disable-next-line:eofline
 };
