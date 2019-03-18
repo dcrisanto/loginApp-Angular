@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 // import 'rxjs/add/operator/map';
+// import { Observable } from 'rxjs/Observable';
+// import { map } from 'rxjs/operators/map';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +35,10 @@ login(email: string, password: string) {
         error => reject(error));
   });
 }
-// Método para obtener los datos del usuario si está logeado
-   // getAuth() {
-     // return this.angularFireAuth.authState.map(auth => auth);
-   // }
+// Método que nos devolverá el estado del usuario si está logeado o no
+   getAuth() {
+      return this.angularFireAuth.authState.pipe(map(auth => auth));
+    }
 // Método para salir de la sesión del usuario
    logout() {
      return this.angularFireAuth.auth.signOut();
