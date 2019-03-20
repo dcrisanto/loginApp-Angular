@@ -5,11 +5,11 @@ import { PrivadoComponent } from './components/privado/privado.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
+import { AuthGuard } from './guards/auth.guard';
 
 const Routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'privado', component: PrivadoComponent },
+  { path: 'privado', component: PrivadoComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', component: NotFoundComponent },

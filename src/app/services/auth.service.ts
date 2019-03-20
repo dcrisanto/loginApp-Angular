@@ -11,8 +11,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-// Inyectando
-  constructor( private angularFireAuth: AngularFireAuth ) { }
+// Inyectando privado a public
+  constructor( public angularFireAuth: AngularFireAuth ) { }
 // Método para creación de usuario
    registerUser(email: string, password: string) {
      // Devolver una nueva función a modo de promesa
