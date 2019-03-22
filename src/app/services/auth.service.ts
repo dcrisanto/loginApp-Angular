@@ -38,7 +38,13 @@ login(email: string, password: string) {
 
 // Método para el logeo con Google
 loginGoogle() {
+  // Para acceder con una ventana emergente, llama a signInWithPopup:
   return this.angularFireAuth.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
+}
+
+// Método para el logeo con Facebook
+loginFacebook() {
+  return this.angularFireAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider());
 }
 
 // Método para obtener el usuario que accedió

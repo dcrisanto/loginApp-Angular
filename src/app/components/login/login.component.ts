@@ -45,6 +45,10 @@ password: string;
 
   loginFacebook() {
     console.log('Logeo con Facebook');
+    this.authService.loginFacebook()
+    .then((resp) => {
+      this.router.navigate(['privado']);
+    }).catch((err) => console.log(err.message));
   }
 
   loginTwitter() {
