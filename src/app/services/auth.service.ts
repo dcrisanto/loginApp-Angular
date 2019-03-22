@@ -35,6 +35,10 @@ login(email: string, password: string) {
         error => reject(error));
   });
 }
+// Método para obtener el usuario que accedió
+   getCurrent(){
+    return this.angularFireAuth.auth.currentUser != null 
+   }
 // Método que nos devolverá el estado del usuario si está logeado o no
    getAuth() {
       return this.angularFireAuth.authState.pipe(map(auth => auth));
