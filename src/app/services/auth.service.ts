@@ -35,6 +35,12 @@ login(email: string, password: string) {
         error => reject(error));
   });
 }
+
+// Método para el logeo con Google
+loginGoogle() {
+  return this.angularFireAuth.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
+}
+
 // Método para obtener el usuario que accedió
    getCurrent(){
     return this.angularFireAuth.auth.currentUser != null 

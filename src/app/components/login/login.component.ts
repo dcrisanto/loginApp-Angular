@@ -34,4 +34,21 @@ password: string;
         });
   }
 
+  loginGoogle() {
+    console.log('Logeo con Google');
+    this.authService.loginGoogle()
+    .then((resp) => {
+      this.router.navigate(['privado']);
+      console.log(resp.user);
+    }).catch((err) => console.log(err.message));
+  }
+
+  loginFacebook() {
+    console.log('Logeo con Facebook');
+  }
+
+  loginTwitter() {
+    console.log('Logeo con Twitter');
+  }
+
 }
